@@ -1,0 +1,21 @@
+.list{
+   display: grid;
+   grid-template-columns: auto auto auto auto;
+   gap: 20px;
+   text-align: center;
+   padding: 10px;
+}
+
+h1{
+   text-align: center;
+   font-size: 32px;
+   font-family: monospace;
+   margin-bottom: 100px;
+}
+
+.list__item {
+   border: 1px solid red;
+   width: 200px;
+   justify-content: center;
+   font-family: monospace;
+}
