@@ -2,9 +2,14 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import Card from './1 dars/App';
 import fruit from "./1 dars/mock"
-import './style.css'
+// import './style.css'
 import GetCalc from "./2-darst/index"
+
 import State2 from "./4 darst/index"
+
+import Styled from './5-darst/idex'
+import CRAt from './CRAT/index'
+
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -22,11 +27,21 @@ root.render(
 
     {/* < ---   3 darsta  ---  */}
 
-    {/* <GetCalc/> */}
+    {/* <GetCalc /> */}
+    
 
     
     {/* < ---   4 darsta  ---  */}
     {/* < ---   / darsta  ---  */}
-    <State2 />
+
+    {/* <State2 /> */}
+
+    {/* 5 darst */}
+{/* 
+    <Styled>
+
+    </Styled> */}
+
+    <CRAt></CRAt>
   </React.StrictMode>
 );
