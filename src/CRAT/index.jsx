@@ -2,6 +2,7 @@ import React from "react";
 
 import { Del, Search } from './style'
 import BezInfo from './mock'
+import "./style.css"
 
 let data = BezInfo
 
@@ -85,43 +86,44 @@ export default class CRAt extends React.Component {
 
       
       return (
-         <div>
-            <Search placeholder="Search" onChange={({ target: { value } }) => search(value)} /><br />
-            <select onChange={({ target: { value } }) => this.setState({ typeSort: value })}>
-               <option value="id">id</option>
-               <option value="name">name</option>
-               <option value="surName">surname</option>
-            </select>
-            <Del color onClick={sort}> sort {"    "}
-            </Del>
+         <div className="cantaner">
+            <div className="Read"> <Search placeholder="Search" onChange={({ target: { value } }) => search(value)} />
+               <Del color onClick={sort}> sort {"    "}
+               </Del>
+               <select onChange={({ target: { value } }) => this.setState({ typeSort: value })}>
+                  <option value="id">id</option>
+                  <option value="name">name</option>
+                  <option value="surName">surname</option>
+               </select>
+            </div>
             <br />
             <div className="add">
-               <input type="text" placeholder="name" value={newName} onChange={({ target: { value } }) => (this.setState({ newName: value }))} /> {"  "}
-               <input type="text" placeholder="surname" value={newsurName} onChange={({ target: { value } }) => (this.setState({ newsurName: value }))} /> {"  "}
+               <input type="text" className="inp" placeholder="name" value={newName} onChange={({ target: { value } }) => (this.setState({ newName: value }))} /> {"  "}
+               <input type="text" className="inp" placeholder="surname" value={newsurName} onChange={({ target: { value } }) => (this.setState({ newsurName: value }))} /> {"  "}
 
-               <br />
-               <Del color onClick={() => {
+              
+               <Del colors onClick={() => {
                   setAdd()
                   this.setState({ newName: "", newsurName: '' })
                }
-               }> add
+               }> Add
                </Del>
             </div>
 
-            {info.map(({ id, name, surName }) =>
-               <h1>
-                  {id}--
-                  {id === slektidrsyude ? <input type="text" onChange={({ target: { value } }) => this.setState({setName : value })} defaultValue={name}  /> : name}--
-                  {id === slektidrsyude ? <input type="text" onChange={({ target: { value } }) => this.setState({ setSurName: value })} defaultValue={surName} /> : surName}
+            <table>{info.map(({ id, name, surName }) =>
+               <tr>
+                <td> <span id="idadd">{id}</span></td>  
+                  <td> {id === slektidrsyude ? <input type="text" onChange={({ target: { value } }) => this.setState({ setName: value })} defaultValue={name} /> : name} </td>
+                  <td> {id === slektidrsyude ? <input type="text" onChange={({ target: { value } }) => this.setState({ setSurName: value })} defaultValue={surName} /> : surName}</td>
                   
-                  {" "}  <Del onClick={() => del(id)}> Del</Del> {" "}
+                <td>  {" "}  <Del onClick={() => del(id)}> Del</Del> {" "}
                   {slektidrsyude === id ? <span>
-                     <button onClick={()=> save(id)}>save</button>
-                     <button onClick={() => this.setState({ slektidrsyude: null })}>Cancel</button>
-                  </span> : (<button onClick={() => this.setState({ slektidrsyude: id, setName: name ,setSurName: surName,})}> Enit</button>)}
-               </h1>)}
+                        <button className="Enit" onClick={()=> save(id)}>save</button>
+                        <button className="Enit" onClick={() => this.setState({ slektidrsyude: null })}>Cancel</button>
+                     </span> : (<button className="Enit" onClick={() => this.setState({ slektidrsyude: id, setName: name, setSurName: surName, })}> Enit</button>)}</td>
+                  </tr>
+              )}</table>
          </div>
       )
    }
-
 }

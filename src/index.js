@@ -2,13 +2,15 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import Card from './1 dars/App';
 import fruit from "./1 dars/mock"
-// import './style.css'
+import './style.css'
 import GetCalc from "./2-darst/index"
 
 import State2 from "./4 darst/index"
 
 import Styled from './5-darst/idex'
 import CRAt from './CRAT/index'
+import { Header } from "./hozing/index"
+import UseReducer from "./useReducer/index"
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -42,6 +44,8 @@ root.render(
 
     </Styled> */}
 
-    <CRAt></CRAt>
+    {/* <CRAt></CRAt> */}
+    {/* <Header/> */}
+    <UseReducer/>
   </React.StrictMode>
 );
